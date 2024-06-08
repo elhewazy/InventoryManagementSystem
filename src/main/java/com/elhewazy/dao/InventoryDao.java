@@ -59,4 +59,14 @@ public class InventoryDao{
             throw new RuntimeException(e);
         }
     }
+    public void addProduct(ProductDTO pd) throws SQLException, ClassNotFoundException {
+String quiry = "insert into products(productcode,productname,costprice,sellprice,brand) values(?,?,?,?,?)";
+        PreparedStatement prepStatement=  getConnection().prepareStatement(quiry);
+        prepStatement.setString(1, pd.getProdCode());
+        prepStatement.setString(2,pd.getProdName() );
+        prepStatement.setDouble(3, pd.getCostPrice());
+        prepStatement.setDouble(4,pd.getSellPrice() );
+        prepStatement.setString(5, pd.getBrand());
+        prepStatement.execute();
+    }
 }

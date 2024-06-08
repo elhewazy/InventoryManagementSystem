@@ -39,7 +39,7 @@ String quiry ="insert into user (email,password) values(?,?)";
 		String passwordDB = rs.getNString("password");
 		if (email.equals(emailDB) && password.equals(passwordDB)){
 			// add code here
-			System.out.println("yes");
+			System.out.println("you login successfully ");
 
 
 
